@@ -7,3 +7,7 @@ REDIS_PORT=6379
 REDIS_HOST=
 REDIS_USERNAME=
 REDIS_PASSWORD=
+
+# optional: comma-separated usernames allowed to use this instance.
+# Unset leaves the instance open to everyone.
+WHITELIST=nixrajput

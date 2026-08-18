@@ -98,6 +98,25 @@ async function app(req: Request): Promise<Response> {
       },
     );
   }
+  // Unset WHITELIST leaves the instance open, which is how upstream ships it.
+  // This deployment sets it so the service is not free hosting for every other
+  // profile on GitHub. Comma-separated, so it can be extended without a deploy.
+  const whitelist = (Deno.env.get("WHITELIST") ?? "")
+    .split(",")
+    .map((entry) => entry.trim().toLowerCase())
+    .filter((entry) => entry.length > 0);
+  if (whitelist.length > 0 && !whitelist.includes(username.toLowerCase())) {
+    return new Response(
+      `"${username}" is not permitted on this instance.`,
+      {
+        status: 403,
+        headers: new Headers({
+          "Content-Type": "text/plain",
+          "Cache-Control": cacheControlHeader,
+        }),
+      },
+    );
+  }
   let theme: Theme = COLORS.default;
   if (Object.keys(COLORS).includes(themeParam)) {
     theme = COLORS[themeParam];

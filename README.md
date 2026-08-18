@@ -587,6 +587,7 @@ Deployed to Vercel from this repo's `master` branch. The service is Deno, entry 
 | :---------------------------------------------------------------- | :------------------------------------------------------------------------- |
 | `GITHUB_TOKEN1`                                                   | GitHub token for the GraphQL queries. Scopes: `read:user` + `public_repo`. |
 | `GITHUB_TOKEN2`                                                   | Second token used for rotation. The same token may be used for both.       |
+| `WHITELIST`                                                       | Comma-separated usernames allowed to use this instance. Unset leaves it open. |
 | `ENABLE_REDIS`                                                    | Set to `true` to turn on the Redis response cache.                         |
 | `REDIS_HOST` / `REDIS_PORT` / `REDIS_USERNAME` / `REDIS_PASSWORD` | Redis connection, read only when `ENABLE_REDIS=true`.                      |
 

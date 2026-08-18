@@ -109,12 +109,21 @@ async function app(req: Request): Promise<Response> {
     .map((entry) => entry.trim().toLowerCase())
     .filter((entry) => entry.length > 0);
   if (whitelist.length > 0 && !whitelist.includes(username.toLowerCase())) {
+    // 200 with an SVG, not a 403: this renders inside a README <img>, and a 403
+    // shows a broken-image icon with no explanation. Matches how the stats and
+    // streak services refuse a non-whitelisted user.
+    const safe = username.replace(/[&<>"']/g, "");
     return new Response(
-      `"${username}" is not permitted on this instance.`,
+      `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="90" viewBox="0 0 500 90" role="img" aria-label="Username not whitelisted">
+  <rect x="0.5" y="0.5" width="499" height="89" rx="6" fill="#141118" stroke="#3d3950"/>
+  <text x="24" y="36" fill="#f0a868" font-family="'Segoe UI',Ubuntu,sans-serif" font-size="15" font-weight="600">Username not whitelisted</text>
+  <text x="24" y="60" fill="#9a93ad" font-family="'Segoe UI',Ubuntu,sans-serif" font-size="12.5">"${safe}" is not permitted on this instance.</text>
+  <text x="24" y="78" fill="#6b6478" font-family="'Segoe UI',Ubuntu,sans-serif" font-size="11.5">Deploy your own: github.com/nixrajput/github-profile-trophy</text>
+</svg>`,
       {
-        status: 403,
+        status: 200,
         headers: new Headers({
-          "Content-Type": "text/plain",
+          "Content-Type": "image/svg+xml",
           "Cache-Control": cacheControlHeader,
         }),
       },

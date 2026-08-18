@@ -50,10 +50,15 @@ export function abridgeScore(score: number): string {
 
 const HOUR_IN_MILLISECONDS = 60 * 60 * 1000;
 
+// One profile's trophies do not change meaningfully within a day, so every layer
+// is pinned to 24 hours: a fresh GitHub query per user per day, and cached hits
+// for the rest. Keeps the API well clear of the rate limit.
+const DAY_IN_SECONDS = 24 * 60 * 60;
+
 export const CONSTANTS = {
-  CACHE_MAX_AGE: 18800,
-  CDN_CACHE_MAX_AGE: 28800, // 8 hours for CDN edge cache
-  STALE_WHILE_REVALIDATE: 86400, // 24 hours - serve stale while revalidating
+  CACHE_MAX_AGE: DAY_IN_SECONDS,
+  CDN_CACHE_MAX_AGE: DAY_IN_SECONDS,
+  STALE_WHILE_REVALIDATE: DAY_IN_SECONDS, // serve stale for a day while revalidating
   DEFAULT_PANEL_SIZE: 110,
   DEFAULT_MAX_COLUMN: 8,
   DEFAULT_MAX_ROW: 3,
@@ -63,8 +68,8 @@ export const CONSTANTS = {
   DEFAULT_NO_FRAME: false,
   DEFAULT_GITHUB_API: "https://api.github.com/graphql",
   DEFAULT_GITHUB_RETRY_DELAY: 500,
-  REVALIDATE_TIME: HOUR_IN_MILLISECONDS * 6,
-  REDIS_TTL: HOUR_IN_MILLISECONDS * 4,
+  REVALIDATE_TIME: HOUR_IN_MILLISECONDS * 24,
+  REDIS_TTL: HOUR_IN_MILLISECONDS * 24,
 };
 
 export enum RANK {

@@ -1,0 +1,19 @@
+# .github/labeler.yml - path-based PR auto-labels (actions/labeler@v5 format).
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['**/*.md']
+ci:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/**']
+deployment:
+  - changed-files:
+      - any-glob-to-any-file: ['vercel.json', 'Dockerfile', 'Procfile', 'app.json']
+service:
+  - changed-files:
+      - any-glob-to-any-file: ['src/**', 'api/**', 'main.ts', 'deps.ts']
+themes:
+  - changed-files:
+      - any-glob-to-any-file: ['src/Themes/**', 'src/card.ts']
+action:
+  - changed-files:
+      - any-glob-to-any-file: ['action.yml', 'render_svg.ts']

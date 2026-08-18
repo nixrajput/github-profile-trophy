@@ -6,6 +6,13 @@
     "lint": "deno lint",
     "test": "ENV_TYPE=test deno test --allow-env"
   },
+  "fmt": {
+    "exclude": [
+      "*.md",
+      "docs/",
+      "assets/"
+    ]
+  },
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.224.0"
   }

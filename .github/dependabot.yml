@@ -1,0 +1,18 @@
+# Dependabot keeps dependencies and workflow action pins current. Weekly rather
+# than daily so a quiet repo does not generate noise, and grouped so one PR covers
+# a batch instead of one PR per package.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
+        patterns: ["*"]
+  # Deno dependencies (deps.ts / JSR imports) are not a supported ecosystem,
+  # so they are reviewed on upstream syncs rather than by Dependabot.
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"

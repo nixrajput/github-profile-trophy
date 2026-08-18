@@ -1,0 +1,80 @@
+name: Bug Report
+description: File a bug report for github-profile-trophy
+title: '[Bug]: '
+labels: ['bug', 'triage']
+assignees: ['nixrajput']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report.
+        Before submitting, please check the [existing issues](https://github.com/nixrajput/github-profile-trophy/issues) to avoid duplicates.
+
+        This repository hosts our own deployment of the service. If the card renders
+        but the numbers look wrong, check the health of the instance first - an expired
+        token often surfaces as a misleading error on the card itself.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of github-profile-trophy is affected?
+      multiple: false
+      options:
+        - Trophy rendering / SVG output
+        - Ranks and titles
+        - Themes and colours
+        - Query parameters (row, column, margin)
+        - GitHub Action (action.yml)
+        - Deployment / hosting
+        - GitHub API, tokens or rate limits
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: card-url
+    attributes:
+      label: Card URL
+      description: The full URL that reproduces the problem.
+      placeholder: 'https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=5&row=2&theme=onedark'
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly. What did you see, and what did you expect?
+      placeholder: 'Expected: ... Actual: ...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps a maintainer can follow.
+      placeholder: |
+        1. Open the card URL above
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: rendered
+    attributes:
+      label: Rendered output
+      description: Paste a screenshot of the card, or the raw SVG response.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This is about our deployment, not a request to change upstream behaviour.
+          required: true

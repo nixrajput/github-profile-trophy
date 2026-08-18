@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: denoland/setup-deno@v2
+        with:
+          # Pinned to the version upstream tests against. Bumping to Deno 2.x is a
+          # separate change that needs the test suite run against it first.
+          deno-version: 1.44.4
+      - name: Cache dependencies
+        run: deno cache --reload deps.ts
+      - name: Format check
+        run: deno fmt --check
+      # Advisory: the synced upstream tree does not lint clean, so this reports
+      # without gating. Drop the `|| true` once the existing findings are fixed.
+      - name: Lint
+        run: deno task lint || true
+      - name: Test
+        run: deno task test
+
+  # action.yml is published from this repo, so the composite action is exercised
+  # end to end rather than assumed working. Kept out of `build` so that stays the
+  # single required check.
+  action:
+    name: action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Render a trophy via the action
+        uses: ./.
+        with:
+          username: ${{ github.repository_owner }}
+          output_path: ./trophy.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify SVG generated
+        run: |
+          test -s trophy.svg || { echo "trophy.svg missing or empty"; exit 1; }
+          echo "trophy.svg is $(wc -c < trophy.svg) bytes"

@@ -1,109 +1,34 @@
 <div align="center">
-  <img width="140" src="https://user-images.githubusercontent.com/6661165/91657958-61b4fd00-eb00-11ea-9def-dc7ef5367e34.png"  alt="GitHub Profile Trophy"/>
-  <h2 align="center">GitHub Profile Trophy</h2>
-  <p align="center">🏆 Add dynamically generated GitHub Stat Trophies on your README</p>
-</div>
-<div align="center">
 
-[![stargazers](https://img.shields.io/github/stars/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/stargazers)
-[![forks](https://img.shields.io/github/forks/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/network/members)
-[![issues](https://img.shields.io/github/issues/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/issues)
-[![license](https://img.shields.io/github/license/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/blob/master/LICENSE)
-[![share](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fryo-ma%2Fgithub-profile-trophy)](https://twitter.com/intent/tweet?text=Add%20dynamically%20generated%20GitHub%20Trophy%20on%20your%20readme%0D%0A&url=https%3A%2F%2Fgithub.com%2Fryo-ma%2Fgithub-profile-trophy)
+<img src="https://raw.githubusercontent.com/nixrajput/github-profile-trophy/master/assets/logo.svg" width="76" alt="github-profile-trophy">
+
+# github-profile-trophy
+
+<em>A trophy case of GitHub profile ranks, rendered as an SVG.</em>
 
 </div>
-<p align="center">
-  You can use this service for free. I'm looking for sponsors to help us keep up with this service❤️
-</p>
-<div align="center">
-  <a href="https://github.com/sponsors/ryo-ma">
-    <img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=ff69b4" alt="Sponsor"/>
-  </a>
-</div>
 
-> ⚠️ **Notice from the Project Owner**
->
-> Hello everyone,\
-> I am the owner of this project.
->
-> Currently, due to the increase in users and traffic, the cost of maintaining
-> this service has become quite high, and it is becoming financially difficult
-> to sustain.\
-> As costs continue to rise, there is a possibility that the service may have to
-> be discontinued.\
-> We are now at a stage where monetization and financial support are essential.
->
-> Your support in the following ways would be greatly appreciated:
->
-> 1. Financial support: [GitHub Sponsors](https://github.com/sponsors/ryo-ma)
-> 2. Reducing server load through self-hosting (by forking on GitHub and
->    deploying to Vercel)
-> 3. Share your github-profile-trophy URL deployed to Vercel for load balancing
->    (Send email: saka_ro@yahoo.co.jp or Pull Request)
+---
 
-# Load balancing endpoints
+Self-hosted service behind the trophy row on [nixrajput's profile README](https://github.com/nixrajput).
+The upstream public instance was disabled for cost reasons, so this runs on our own Vercel
+deployment and our own GitHub tokens.
 
-These are endpoints provided by volunteers. Please use these in moderation.
+**Endpoint:** `https://github-profile-trophy-nixlab.vercel.app`
 
-- [https://trophygithubreadmelang.cybee.dpdns.org/](https://trophygithubreadmelang.cybee.dpdns.org/)
-  by [Cyberbee-pro](https://github.com/Cyberbee-pro)
-- [https://github-profile-trophy-liard-delta.vercel.app](https://github-profile-trophy-liard-delta.vercel.app/)
-  by [Adwitya](https://github.com/Adwitya)
-- [https://github-profile-trophy-fork-two.vercel.app](https://github-profile-trophy-fork-two.vercel.app)
-  by [hesreallyhim](https://github.com/hesreallyhim)
-- [https://github-profile-trophy-winning.vercel.app](https://github-profile-trophy-winning.vercel.app)
-  by [hongbo-wei](https://github.com/hongbo-wei)
-- [https://github-profile-trophy-kannan.vercel.app](https://github-profile-trophy-kannan.vercel.app)
-  by [kann4n](https://github.com/kann4n)
-- [https://trophy.ryglcloud.net](https://trophy.ryglcloud.net) by
-  [PracticalRyan](https://github.com/PracticalRyan)
-- [https://github-profile-trophy-tawny.vercel.app](https://github-profile-trophy-tawny.vercel.app)
-  by [vijaypurohit322](https://github.com/vijaypurohit322)
-- [https://github-profile-repo.vercel.app](https://github-profile-repo.vercel.app/))
-  by [HackyCoder0951](https://github.com/hackycoder0951)
-- [https://gh-trophy.cdnsoft.net](https://gh-trophy.cdnsoft.net) by
-  [cromatikap](https://github.com/cromatikap)
-- [https://trophygh.kolioaris.xyz](https://trophygh.kolioaris.xyz) by
-  [kolioaris](https://github.com/kolioaris)
-- [https://github-profile-trophy-orcin-eta.vercel.app](https://github-profile-trophy-orcin-eta.vercel.app/)
-  by [manupawick](https://github.com/manupawickramasinghe)
-- [https://github-profile-trophy-reiyua-mirror.vercel.app](https://github-profile-trophy-reiyua-mirror.vercel.app)
-  by [reiyua](https://github.com/reiyua)
-- [https://github-profile-trophy-sigma-one.vercel.app](https://github-profile-trophy-sigma-one.vercel.app/))
-  by [namankoolwal](https://github.com/namankoolwal)
-- [https://trophy.benkou.dev/](https://trophy.benkou.dev/) by
-  [Ben](https://github.com/0x5b62656e5d)
-- [https://github-trophies.devomb.com/](https://github-trophies.devomb.com/) by
-  [DevomB](https://github.com/DevomB/Github-Trophies)
-- [https://github-profile-trophy-unserori.vercel.app/](https://github-profile-trophy-unserori.vercel.app/)
-  by [unSerori](https://github.com/unSerori)
+## Quick start
 
-# Quick Start
-
-Add the following code to your readme. When pasting the code into your profile's
-readme, change the `?username=` value to your GitHub's username.
-
-```
-[![trophy](https://github-profile-trophy.vercel.app/?username=ryo-ma)](https://github.com/ryo-ma/github-profile-trophy)
+```md
+[![trophy](https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput)](https://github.com/nixrajput/github-profile-trophy)
 ```
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ryo-ma&column=8&rank=SSS,SS,S,AAA,AA,A,B,C" />
-</p>
+With the layout the profile README actually uses:
 
-## Use theme
-
-Add optional parameter of the theme.
-
-```
-[![trophy](https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onedark)](https://github.com/ryo-ma/github-profile-trophy)
+```md
+[![trophy](https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=5&row=2&theme=onedark&no-bg=true)](https://github.com/nixrajput)
 ```
 
-<p align="center">
-  <img width="660" src="https://user-images.githubusercontent.com/6661165/92327052-d99b9e00-f091-11ea-9a24-c7ec86982370.png">
-</p>
-
-**[More detail](#apply-theme)**
+**[Full theme list](#apply-theme)**
 
 # About Rank
 
@@ -159,7 +84,7 @@ conditions, I will consider adding a trophy. I am waiting for contributions.
 You can filter the display by specifying the titles of trophy.
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&title=Followers
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Followers
 ```
 
 <p align="center">
@@ -169,7 +94,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&title=Followers
 If you want to specify multiple titles.
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&title=Stars,Followers
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Stars,Followers
 ```
 
 <p align="center">
@@ -179,7 +104,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&title=Stars,Followers
 You can also exclude the trophies you don't want to display.
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&title=-Stars,-Followers
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=-Stars,-Followers
 ```
 
 ## Filter by ranks
@@ -188,7 +113,7 @@ You can filter the display by specifying the ranks.\
 `Available values: SECRET SSS SS S AAA AA A B C`
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&rank=S
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S
 ```
 
 <p align="center">
@@ -198,7 +123,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&rank=S
 If you want to specify multiple ranks.
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&rank=S,AAA
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S,AAA
 ```
 
 <p align="center">
@@ -208,7 +133,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&rank=S,AAA
 You can also exclude ranks.
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&rank=-C,-B
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=-C,-B
 ```
 
 **NOTE: Since `UNKNOWN` is denoted by `?`, in order to include or exclude it you
@@ -225,19 +150,19 @@ Trophy will be hidden if it exceeds the range of both row and column.
 Restrict only row
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&row=2
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&row=2
 ```
 
 Restrict only column
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&column=2
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=2
 ```
 
 Restrict row & column
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&row=2&column=3
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&row=2&column=3
 ```
 
 <p align="center">
@@ -247,7 +172,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&row=2&column=3
 Adaptive column
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&column=-1
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=-1
 ```
 
 You can set `column` to `-1` to adapt the width to the number of trophies, the
@@ -287,7 +212,7 @@ Available themes.
 ### flat
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=flat
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=flat
 ```
 
 <p align="center">
@@ -297,7 +222,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=flat
 ### onedark
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onedark
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onedark
 ```
 
 <p align="center">
@@ -307,7 +232,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onedark
 ### gruvbox
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=gruvbox
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gruvbox
 ```
 
 <p align="center">
@@ -317,7 +242,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=gruvbox
 ### dracula
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dracula
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dracula
 ```
 
 <p align="center">
@@ -327,7 +252,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dracula
 ### monokai
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=monokai
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=monokai
 ```
 
 <p align="center">
@@ -337,7 +262,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=monokai
 ### chalk
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=chalk
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=chalk
 ```
 
 <p align="center">
@@ -347,7 +272,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=chalk
 ### nord
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=nord
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=nord
 ```
 
 <p align="center">
@@ -357,7 +282,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=nord
 ### alduin
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=alduin
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=alduin
 ```
 
 <p align="center">
@@ -367,7 +292,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=alduin
 ### darkhub
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=darkhub
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=darkhub
 ```
 
 <p align="center">
@@ -377,7 +302,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=darkhub
 ### juicyfresh
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=juicyfresh
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=juicyfresh
 ```
 
 <p align="center">
@@ -387,7 +312,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=juicyfresh
 ### buddhism
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=buddhism
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=buddhism
 ```
 
 <p align="center">
@@ -397,7 +322,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=buddhism
 ### oldie
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=oldie
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=oldie
 ```
 
 <p align="center">
@@ -407,7 +332,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=oldie
 ### radical
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=radical
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=radical
 ```
 
 <p align="center">
@@ -417,7 +342,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=radical
 ### onestar
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onestar
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onestar
 ```
 
 <p align="center">
@@ -427,7 +352,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=onestar
 ### discord
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=discord
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=discord
 ```
 
 <p align="center">
@@ -437,7 +362,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=discord
 ### algolia
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=algolia
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=algolia
 ```
 
 <p align="center">
@@ -447,7 +372,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=algolia
 ### gitdimmed
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=gitdimmed
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gitdimmed
 ```
 
 <p align="center">
@@ -457,7 +382,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=gitdimmed
 ### tokyonight
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=tokyonight
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=tokyonight
 ```
 
 <p align="center">
@@ -467,7 +392,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=tokyonight
 ### matrix
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=matrix
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=matrix
 ```
 
 <p align="center">
@@ -477,7 +402,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=matrix
 ### apprentice
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=apprentice
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=apprentice
 ```
 
 <p align="center">
@@ -487,7 +412,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=apprentice
 ### dark_dimmed
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dark_dimmed
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_dimmed
 ```
 
 <p align="center">
@@ -497,7 +422,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dark_dimmed
 ### dark_lover
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dark_lover
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_lover
 ```
 
 <p align="center">
@@ -507,7 +432,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=dark_lover
 ### kimbie_dark
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=kimbie_dark
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=kimbie_dark
 ```
 
 <p align="center">
@@ -517,7 +442,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=kimbie_dark
 ### aura
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&theme=aura
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=aura
 ```
 
 <p align="center">
@@ -531,7 +456,7 @@ You can put a margin in the width between trophies.\
 `Default: margin-w=0`
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&margin-w=15
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&margin-w=15
 ```
 
 <p align="center">
@@ -545,7 +470,7 @@ You can put a margin in the height between trophies.\
 `Default: margin-h=0`
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&margin-h=15
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&margin-h=15
 ```
 
 <p align="center">
@@ -555,7 +480,7 @@ https://github-profile-trophy.vercel.app/?username=ryo-ma&margin-h=15
 ## Example layout
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&column=3&margin-w=15&margin-h=15
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=3&margin-w=15&margin-h=15
 ```
 
 <p align="center">
@@ -569,7 +494,7 @@ You can turn the background transparent.\
 `Default: no-bg=false`
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&no-bg=true
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&no-bg=true
 ```
 
 <p align="center">
@@ -583,7 +508,7 @@ You can hide the frames around the trophies.\
 `Default: no-frame=false`
 
 ```
-https://github-profile-trophy.vercel.app/?username=ryo-ma&no-frame=true
+https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&no-frame=true
 ```
 
 <p align="center">
@@ -618,89 +543,40 @@ Usage:
     token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Self-hosting on Vercel
+## 🚀 Deployment
 
-By self-hosting you avoid rate-limits, instances getting paused and you bypass
-the #439 issue.
+Deployed to Vercel from this repo's `master` branch. The service is Deno, entry point `api/index.ts`.
 
-1. For people who do not have this repo forked, you need to do that before you
-   can deploy anything.
+| Environment variable | Purpose |
+| :------------------- | :------ |
+| `GITHUB_TOKEN1`      | GitHub token for the GraphQL queries. Scopes: `read:user` + `public_repo`. |
+| `GITHUB_TOKEN2`      | Second token used for rotation. The same token may be used for both. |
+| `ENABLE_REDIS`       | Set to `true` to turn on the Redis response cache. |
+| `REDIS_HOST` / `REDIS_PORT` / `REDIS_USERNAME` / `REDIS_PASSWORD` | Redis connection, read only when `ENABLE_REDIS=true`. |
 
-2. Make an account, connect your GitHub account to Vercel, and import your repo.
+Caching is already built in and needs no code: responses are held for 4 hours in Redis
+(`src/config/cache.ts`) on top of an 8 hour CDN edge cache. Turning Redis on is the cheapest
+way to keep GitHub API usage down.
 
-3. Go back to GitHub, generate a token, and copy it.
+> [!TIP]
+> `action.yml` renders the SVG inside a GitHub workflow and commits the file, which costs one
+> API call per scheduled run and none at page-view time. See
+> [Generate an svg inside Github CI](#generate-an-svg-inside-github-ci-workflow).
 
-4. Set your token scopes to `read:user` + `public_repo` (only use `repo` if you
-   want private contributions counted).
+## 🛠 Local development
 
-5. On Vercel's configure screen, add two environment variables and paste the
-   token as the value of each — you can use the same token for both:
+Requires [Deno](https://deno.land).
 
-```
-GITHUB_TOKEN1=your_token
-GITHUB_TOKEN2=your_token
-```
-
-6. After that you can deploy it.
-
-7. Set Vercel Authentication -> Only Preview Deployments, or your card shows
-   blank.
-
-8. You get a domain which you can use/test, it looks something like this:
-
-```
-https://<your-app>.vercel.app/?username=USERNAME
+```bash
+deno task start    # serve locally (main.ts)
+deno task test     # run the test suite
+deno task lint     # lint
+deno task format   # format
 ```
 
-# Contribution Guide
+## 📄 Attribution
 
-Check [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
-
-# License
-
-This product is licensed under the
-[MIT License](https://github.com/ryo-ma/github-profile-trophy/blob/master/LICENSE).
-
-# 🙏 Sponsors
-
-Thank you so much to all the amazing sponsors who support this project! Your
-contributions help keep development going and make this work possible.
-
-## 💖 Monthly Sponsors
-
-- [@Leay15](https://github.com/Leay15) - $10 / month
-- [@hesreallyhim](https://github.com/hesreallyhim) - $10 / month
-- [@pmsosa](https://github.com/pmsosa) — $10 / month
-- [@chenfeng-huang](https://github.com/chenfeng-huang) — $10 / month
-- [@holly-hacker](https://github.com/holly-hacker) — $2 / month
-- [@skillerious](https://github.com/skillerious) — $2 / month (since Aug
-  17, 2024)
-- [@LudovicGardy](https://github.com/LudovicGardy) — $10 / month (since Aug
-  15, 2024)
-- [@alexcastrodev](https://github.com/alexcastrodev) — $10 / month (since Oct
-  13, 2023, previously $50 / month)
-- [@great-work-told-is](https://github.com/great-work-told-is) — $10 / month
-  (since Apr 12, 2023)
-- [@Ilithy](https://github.com/Ilithy) — $5 / month (since Jul 21, 2022)
-- [@weakish](https://github.com/weakish) — $2 / month (since Jan 22, 2022)
-- [@Kazuhito00](https://github.com/Kazuhito00) — $2 / month (since Jan 19, 2022)
-- [@KATO-Hiro](https://github.com/KATO-Hiro) — $2 / month (since Jan 5, 2022)
-- [@batazor](https://github.com/batazor) — $2 / month (since Oct 28, 2021)
-- [@port19x](https://github.com/port19x) — $2 / month (since Jan 27, 2022)
-
-## 🎁 One-Time Sponsors
-
-- [@pronoym99](https://github.com/pronoym99) - $20 (Feb 8, 2026)
-- [@hesreallyhim](https://github.com/hesreallyhim) - $100 (Jan 11, 2026)
-- [@Seo-4d696b75](https://github.com/Seo-4d696b75) — $10 (Jan 4, 2026)
-- [@massif-01](https://github.com/massif-01) — $5 (December 17, 2025)
-- [@tapegram](https://github.com/tapegram) — $20 (December 6, 2025)
-- [@WilliamCorotan](https://github.com/WilliamCorotan) — $5 (November 5, 2025)
-- [@arnabnandy7](https://github.com/arnabnandy7) — $10 (Oct 3, 2025)
-- [@JoqarSabon](https://github.com/JoqarSabon) — $5 (May 24, 2024)
-- [@syaghoubi00](https://github.com/syaghoubi00) — $5 (Jan 28, 2024)
-- [@pylapp](https://github.com/pylapp) — $20 (Jan 15, 2024)
-- [@Dobefu](https://github.com/Dobefu) — $10 (Dec 22, 2024)
-- [@michele-lorenzoni](https://github.com/michele-lorenzoni) — $10 (Nov
-  26, 2024)
-- [@skillerious](https://github.com/skillerious) — $10 (Aug 17, 2024)
+Derived from [ryo-ma/github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy),
+used under the MIT License. The original copyright notice is retained in [LICENSE](./LICENSE).
+This repository is an independent deployment and is not affiliated with or endorsed by the
+original author.

@@ -103,6 +103,12 @@ a:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius
 </body>
 </html>`;
 
+// Cards are immutable for a day; nothing else is. A landing page, an error, or a
+// whitelist refusal cached for 24h means a transient failure or a whitelist edit
+// sticks in every visitor's browser for a day. Five minutes is enough to absorb a
+// reload storm and short enough to self-heal.
+const shortCacheHeader = "public, max-age=300";
+
 const defaultHeaders = new Headers(
   {
     "Content-Type": "image/svg+xml",
@@ -134,7 +140,7 @@ async function app(req: Request): Promise<Response> {
         status: 200,
         headers: new Headers({
           "Content-Type": "text/html; charset=utf-8",
-          "Cache-Control": cacheControlHeader,
+          "Cache-Control": shortCacheHeader,
         }),
       },
     );
@@ -162,7 +168,7 @@ async function app(req: Request): Promise<Response> {
         status: 200,
         headers: new Headers({
           "Content-Type": "image/svg+xml",
-          "Cache-Control": cacheControlHeader,
+          "Cache-Control": shortCacheHeader,
         }),
       },
     );
@@ -208,7 +214,7 @@ async function app(req: Request): Promise<Response> {
           status: userResponseInfo.code,
           headers: new Headers({
             "Content-Type": "text/html",
-            "Cache-Control": cacheControlHeader,
+            "Cache-Control": shortCacheHeader,
           }),
         },
       );

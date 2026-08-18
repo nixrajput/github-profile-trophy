@@ -2,7 +2,10 @@ import { Card } from "../src/card.ts";
 import { CONSTANTS, parseParams } from "../src/utils.ts";
 import { COLORS, Theme } from "../src/theme.ts";
 import { Error400 } from "../src/error_page.ts";
-import "@std/dotenv/load";
+// Fully qualified on purpose: vercel-deno resolves imports at runtime and does not
+// apply deno.json's import map, so the bare "@std/dotenv/load" specifier throws
+// ERR_MODULE_NOT_FOUND on cold start and takes the whole function down.
+import "https://deno.land/std@0.224.0/dotenv/load.ts";
 import { staticRenderRegeneration } from "../src/StaticRenderRegeneration/index.ts";
 import { GithubRepositoryService } from "../src/Repository/GithubRepository.ts";
 import { GithubApiService } from "../src/Services/GithubApiService.ts";

@@ -10,8 +10,13 @@ export async function staticRenderRegeneration(
   // avoid TypeError: Invalid URL at deno:core
   const url = getUrl(request);
 
-  // if more conditions are added, make sure to create a variable to skipCache
-  if (url.pathname === "/favicon.ico") {
+  // A cache hit below is replayed with options.headers, which is the SVG content
+  // type. Anything that is not an SVG has to bypass the cache or it gets served
+  // as image/svg+xml: the favicon, and the landing page shown when no username
+  // is given. The CDN still caches both via Cache-Control.
+  const skipCache = url.pathname === "/favicon.ico" ||
+    !url.searchParams.get("username");
+  if (skipCache) {
     return await render(request);
   }
 

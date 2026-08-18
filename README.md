@@ -50,18 +50,18 @@ Self-hosted service behind the trophy row on [nixrajput's profile README](https:
 The upstream public instance was disabled for cost reasons, so this runs on our own Vercel
 deployment and our own GitHub tokens.
 
-**Endpoint:** `https://github-profile-trophy-nixlab.vercel.app`
+**Endpoint:** `https://github-profile-trophy.nixrajput.com`
 
 ## Quick start
 
 ```md
-[![trophy](https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput)](https://github.com/nixrajput/github-profile-trophy)
+[![trophy](https://github-profile-trophy.nixrajput.com/?username=nixrajput)](https://github.com/nixrajput/github-profile-trophy)
 ```
 
 With the layout the profile README actually uses:
 
 ```md
-[![trophy](https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=5&row=2&theme=onedark&no-bg=true)](https://github.com/nixrajput)
+[![trophy](https://github-profile-trophy.nixrajput.com/?username=nixrajput&column=5&row=2&theme=onedark&no-bg=true)](https://github.com/nixrajput)
 ```
 
 **[Full theme list](#apply-theme)**
@@ -120,7 +120,7 @@ conditions, I will consider adding a trophy. I am waiting for contributions.
 You can filter the display by specifying the titles of trophy.
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Followers
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&title=Followers
 ```
 
 <p align="center">
@@ -130,7 +130,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Follow
 If you want to specify multiple titles.
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Stars,Followers
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&title=Stars,Followers
 ```
 
 <p align="center">
@@ -140,7 +140,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=Stars,
 You can also exclude the trophies you don't want to display.
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&title=-Stars,-Followers
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&title=-Stars,-Followers
 ```
 
 ## Filter by ranks
@@ -149,7 +149,7 @@ You can filter the display by specifying the ranks.\
 `Available values: SECRET SSS SS S AAA AA A B C`
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&rank=S
 ```
 
 <p align="center">
@@ -159,7 +159,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S
 If you want to specify multiple ranks.
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S,AAA
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&rank=S,AAA
 ```
 
 <p align="center">
@@ -169,7 +169,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=S,AAA
 You can also exclude ranks.
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&rank=-C,-B
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&rank=-C,-B
 ```
 
 **NOTE: Since `UNKNOWN` is denoted by `?`, in order to include or exclude it you
@@ -186,19 +186,19 @@ Trophy will be hidden if it exceeds the range of both row and column.
 Restrict only row
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&row=2
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&row=2
 ```
 
 Restrict only column
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=2
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&column=2
 ```
 
 Restrict row & column
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&row=2&column=3
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&row=2&column=3
 ```
 
 <p align="center">
@@ -208,7 +208,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&row=2&column
 Adaptive column
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=-1
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&column=-1
 ```
 
 You can set `column` to `-1` to adapt the width to the number of trophies, the
@@ -248,7 +248,7 @@ Available themes.
 ### flat
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=flat
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=flat
 ```
 
 <p align="center">
@@ -258,7 +258,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=flat
 ### onedark
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onedark
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=onedark
 ```
 
 <p align="center">
@@ -268,7 +268,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onedar
 ### gruvbox
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gruvbox
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=gruvbox
 ```
 
 <p align="center">
@@ -278,7 +278,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gruvbo
 ### dracula
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dracula
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=dracula
 ```
 
 <p align="center">
@@ -288,7 +288,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dracul
 ### monokai
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=monokai
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=monokai
 ```
 
 <p align="center">
@@ -298,7 +298,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=monoka
 ### chalk
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=chalk
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=chalk
 ```
 
 <p align="center">
@@ -308,7 +308,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=chalk
 ### nord
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=nord
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=nord
 ```
 
 <p align="center">
@@ -318,7 +318,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=nord
 ### alduin
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=alduin
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=alduin
 ```
 
 <p align="center">
@@ -328,7 +328,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=alduin
 ### darkhub
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=darkhub
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=darkhub
 ```
 
 <p align="center">
@@ -338,7 +338,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=darkhu
 ### juicyfresh
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=juicyfresh
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=juicyfresh
 ```
 
 <p align="center">
@@ -348,7 +348,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=juicyf
 ### buddhism
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=buddhism
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=buddhism
 ```
 
 <p align="center">
@@ -358,7 +358,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=buddhi
 ### oldie
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=oldie
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=oldie
 ```
 
 <p align="center">
@@ -368,7 +368,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=oldie
 ### radical
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=radical
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=radical
 ```
 
 <p align="center">
@@ -378,7 +378,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=radica
 ### onestar
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onestar
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=onestar
 ```
 
 <p align="center">
@@ -388,7 +388,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=onesta
 ### discord
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=discord
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=discord
 ```
 
 <p align="center">
@@ -398,7 +398,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=discor
 ### algolia
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=algolia
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=algolia
 ```
 
 <p align="center">
@@ -408,7 +408,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=algoli
 ### gitdimmed
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gitdimmed
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=gitdimmed
 ```
 
 <p align="center">
@@ -418,7 +418,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=gitdim
 ### tokyonight
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=tokyonight
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=tokyonight
 ```
 
 <p align="center">
@@ -428,7 +428,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=tokyon
 ### matrix
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=matrix
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=matrix
 ```
 
 <p align="center">
@@ -438,7 +438,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=matrix
 ### apprentice
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=apprentice
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=apprentice
 ```
 
 <p align="center">
@@ -448,7 +448,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=appren
 ### dark_dimmed
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_dimmed
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=dark_dimmed
 ```
 
 <p align="center">
@@ -458,7 +458,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_d
 ### dark_lover
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_lover
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=dark_lover
 ```
 
 <p align="center">
@@ -468,7 +468,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=dark_l
 ### kimbie_dark
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=kimbie_dark
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=kimbie_dark
 ```
 
 <p align="center">
@@ -478,7 +478,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=kimbie
 ### aura
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&theme=aura
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&theme=aura
 ```
 
 <p align="center">
@@ -492,7 +492,7 @@ You can put a margin in the width between trophies.\
 `Default: margin-w=0`
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&margin-w=15
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&margin-w=15
 ```
 
 <p align="center">
@@ -506,7 +506,7 @@ You can put a margin in the height between trophies.\
 `Default: margin-h=0`
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&margin-h=15
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&margin-h=15
 ```
 
 <p align="center">
@@ -516,7 +516,7 @@ https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&margin-h=15
 ## Example layout
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=3&margin-w=15&margin-h=15
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&column=3&margin-w=15&margin-h=15
 ```
 
 <p align="center">
@@ -530,7 +530,7 @@ You can turn the background transparent.\
 `Default: no-bg=false`
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&no-bg=true
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&no-bg=true
 ```
 
 <p align="center">
@@ -544,7 +544,7 @@ You can hide the frames around the trophies.\
 `Default: no-frame=false`
 
 ```
-https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&no-frame=true
+https://github-profile-trophy.nixrajput.com/?username=nixrajput&no-frame=true
 ```
 
 <p align="center">

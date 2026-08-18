@@ -37,7 +37,7 @@ body:
     attributes:
       label: Card URL
       description: The full URL that reproduces the problem.
-      placeholder: 'https://github-profile-trophy-nixlab.vercel.app/?username=nixrajput&column=5&row=2&theme=onedark'
+      placeholder: 'https://github-profile-trophy.nixrajput.com/?username=nixrajput&column=5&row=2&theme=onedark'
     validations:
       required: true
 

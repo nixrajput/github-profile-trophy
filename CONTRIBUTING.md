@@ -37,7 +37,7 @@ Rename `env-example` to `.env`, and change ENABLE_REDIS to true
 
 Open localhost from your browser.
 
-http://localhost:8080/?username=ryo-ma
+http://localhost:8080/?username=nixrajput
 
 ## Editor config
 

@@ -6,9 +6,45 @@
 
 <em>A trophy case of GitHub profile ranks, rendered as an SVG.</em>
 
+<br />
+
+[![Stars](https://img.shields.io/github/stars/nixrajput/github-profile-trophy?color=159F7C)][repo]
+[![License: MIT](https://img.shields.io/github/license/nixrajput/github-profile-trophy?color=159F7C)][license]
+[![Last commit](https://img.shields.io/github/last-commit/nixrajput/github-profile-trophy?label=last%20commit)][repo]
+[![Issues](https://img.shields.io/github/issues/nixrajput/github-profile-trophy?label=issues)][issues]
+[![PRs](https://img.shields.io/github/issues-pr/nixrajput/github-profile-trophy?label=PRs)][pulls]
+
+<strong>Self-hosted &middot; Redis cache built in &middot; 24 themes &middot; CI rendering mode &middot; Deno on Vercel</strong><br>
+<sub>The upstream public instance was disabled for cost reasons, so this runs on our own deployment and tokens. Responses are cached <strong>4 hours in Redis</strong> on top of an <strong>8 hour CDN edge cache</strong>, and <code>action.yml</code> can render the SVG inside a workflow instead - one API call per scheduled run, none at page-view time.</sub>
+
 </div>
 
 ---
+
+## Contents
+
+- [github-profile-trophy](#github-profile-trophy)
+  - [Contents](#contents)
+  - [Quick start](#quick-start)
+  - [Secret Rank](#secret-rank)
+  - [Filter by titles](#filter-by-titles)
+  - [Filter by ranks](#filter-by-ranks)
+  - [Specify the maximum row & column size](#specify-the-maximum-row--column-size)
+  - [Apply theme](#apply-theme)
+  - [Margin Width](#margin-width)
+  - [Margin Height](#margin-height)
+  - [Example layout](#example-layout)
+  - [Transparent background](#transparent-background)
+  - [Hide frames](#hide-frames)
+  - [Generate an svg file localy](#generate-an-svg-file-localy)
+  - [Generate an svg inside Github CI (Workflow)](#generate-an-svg-inside-github-ci-workflow)
+  - [🚀 Deployment](#-deployment)
+  - [🛠 Local development](#-local-development)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
+  - [License](#license)
+  - [Support the project](#support-the-project)
+  - [Connect](#connect)
 
 Self-hosted service behind the trophy row on [nixrajput's profile README](https://github.com/nixrajput).
 The upstream public instance was disabled for cost reasons, so this runs on our own Vercel
@@ -547,12 +583,12 @@ Usage:
 
 Deployed to Vercel from this repo's `master` branch. The service is Deno, entry point `api/index.ts`.
 
-| Environment variable | Purpose |
-| :------------------- | :------ |
-| `GITHUB_TOKEN1`      | GitHub token for the GraphQL queries. Scopes: `read:user` + `public_repo`. |
-| `GITHUB_TOKEN2`      | Second token used for rotation. The same token may be used for both. |
-| `ENABLE_REDIS`       | Set to `true` to turn on the Redis response cache. |
-| `REDIS_HOST` / `REDIS_PORT` / `REDIS_USERNAME` / `REDIS_PASSWORD` | Redis connection, read only when `ENABLE_REDIS=true`. |
+| Environment variable                                              | Purpose                                                                    |
+| :---------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| `GITHUB_TOKEN1`                                                   | GitHub token for the GraphQL queries. Scopes: `read:user` + `public_repo`. |
+| `GITHUB_TOKEN2`                                                   | Second token used for rotation. The same token may be used for both.       |
+| `ENABLE_REDIS`                                                    | Set to `true` to turn on the Redis response cache.                         |
+| `REDIS_HOST` / `REDIS_PORT` / `REDIS_USERNAME` / `REDIS_PASSWORD` | Redis connection, read only when `ENABLE_REDIS=true`.                      |
 
 Caching is already built in and needs no code: responses are held for 4 hours in Redis
 (`src/config/cache.ts`) on top of an 8 hour CDN edge cache. Turning Redis on is the cheapest
@@ -574,9 +610,64 @@ deno task lint     # lint
 deno task format   # format
 ```
 
-## 📄 Attribution
+## Contributing
 
-Derived from [ryo-ma/github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy),
-used under the MIT License. The original copyright notice is retained in [LICENSE](./LICENSE).
-This repository is an independent deployment and is not affiliated with or endorsed by the
-original author.
+Contributions are welcome. Fork, branch, and open a PR. Bugs and ideas go to [Issues][issues]; questions to [Discussions][discussions].
+
+## Contributors
+
+Thanks to everyone who has contributed to github-profile-trophy.
+
+<a href="https://github.com/nixrajput/github-profile-trophy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nixrajput/github-profile-trophy" alt="Contributors" />
+</a>
+
+## License
+
+Licensed under the **MIT** license - see [LICENSE](LICENSE).
+
+Derived from [ryo-ma/github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy) by ryo-ma, used under the MIT License. The original
+copyright notice is retained in [LICENSE](LICENSE). This repository is an independent
+deployment and is not affiliated with or endorsed by the original author.
+
+## Support the project
+
+<div align="center">
+
+github-profile-trophy is MIT licensed and free to use, always. If it earns a place on your profile, sponsorship is welcome.
+
+<br />
+
+<a href="https://github.com/sponsors/nixrajput">
+  <img src="https://img.shields.io/badge/Sponsor_on_GitHub-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="GitHub Sponsors" />
+</a>
+<a href="https://ko-fi.com/nixrajput">
+  <img src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white" alt="Ko-fi" />
+</a>
+<a href="https://www.buymeacoffee.com/nixrajput">
+  <img src="https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy Me a Coffee" />
+</a>
+
+</div>
+
+## Connect
+
+<div align="center">
+
+**Nikhil Rajput**
+
+<a href="https://github.com/nixrajput"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+<a href="https://linkedin.com/in/nixrajput"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://x.com/nixrajput"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
+<a href="https://instagram.com/nixrajput"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+<a href="https://telegram.me/nixrajput"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+<a href="mailto:nkr.nikhil.nkr@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+
+</div>
+
+[repo]: https://github.com/nixrajput/github-profile-trophy
+[issues]: https://github.com/nixrajput/github-profile-trophy/issues
+[pulls]: https://github.com/nixrajput/github-profile-trophy/pulls
+[discussions]: https://github.com/nixrajput/github-profile-trophy/discussions
+[contributors]: https://github.com/nixrajput/github-profile-trophy/graphs/contributors
+[license]: https://github.com/nixrajput/github-profile-trophy/blob/master/LICENSE

@@ -1,7 +1,6 @@
 import { Card } from "../src/card.ts";
 import { CONSTANTS, parseParams } from "../src/utils.ts";
 import { COLORS, Theme } from "../src/theme.ts";
-import { Error400 } from "../src/error_page.ts";
 // Fully qualified on purpose: vercel-deno resolves imports at runtime and does not
 // apply deno.json's import map, so the bare "@std/dotenv/load" specifier throws
 // ERR_MODULE_NOT_FOUND on cold start and takes the whole function down.
@@ -23,6 +22,86 @@ const cacheControlHeader = [
   `s-maxage=${CONSTANTS.CDN_CACHE_MAX_AGE}`,
   `stale-while-revalidate=${CONSTANTS.STALE_WHILE_REVALIDATE}`,
 ].join(", ");
+
+const HOME_PAGE = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>github-profile-trophy</title>
+<meta name="description" content="Self-hosted GitHub profile trophy card service.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2796%27%20height%3D%2796%27%20viewBox%3D%270%200%2032%2032%27%3E%20%3Ctitle%3Egithub-profile-trophy%3C%2Ftitle%3E%20%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%23141118%27%20%2F%3E%20%3C%21--%20A%20cup%20earned%20by%20rank%2C%20which%20is%20what%20the%20service%20grades%3A%20the%20bowl%20is%20filled%20violet%20because%20a%20trophy%20is%20awarded%2C%20not%20attempted.%20Amber%20handles%20carry%20the%20accent%20rather%20than%20a%20star%20or%20a%20%271%27%2C%20both%20of%20which%20stop%20reading%20at%20favicon%20size.%20--%3E%20%3Cpath%20d%3D%27M11%207h10v5.5a5%205%200%200%201-10%200Z%27%20fill%3D%27%239b8cff%27%20%2F%3E%20%3Cpath%20d%3D%27M11%208.5H8.5v2a3%203%200%200%200%203%203M21%208.5h2.5v2a3%203%200%200%201-3%203%27%20fill%3D%27none%27%20stroke%3D%27%23f0a868%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20%2F%3E%20%3Cpath%20d%3D%27M16%2017.5v4%27%20stroke%3D%27%239b8cff%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20%2F%3E%20%3Crect%20x%3D%2710.5%27%20y%3D%2721.5%27%20width%3D%2711%27%20height%3D%273.2%27%20rx%3D%271.6%27%20fill%3D%27%23e9e6ef%27%20%2F%3E%20%3C%2Fsvg%3E">
+<style>*{box-sizing:border-box}
+:root{--bg:#100f15;--surface:#191822;--line:#2b2836;--text:#e9e6ef;--dim:#9a93ad;--violet:#9b8cff;--amber:#f0a868;
+--mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 var(--sans);
+padding:clamp(2rem,7vw,4.5rem) 1.25rem 5rem;-webkit-font-smoothing:antialiased}
+main{max-width:44rem;margin:0 auto}
+.mark{display:block;width:64px;height:64px;margin:0 0 1.5rem}
+h1{font:700 clamp(1.35rem,4.5vw,1.9rem)/1.1 var(--mono);letter-spacing:-.02em;margin:0 0 .5rem;word-break:break-word}
+.tag{color:var(--dim);margin:0 0 2.5rem;max-width:34rem}
+.demo{margin:0 0 2.5rem;padding:0}
+.demo img{display:block;max-width:100%;height:auto;border-radius:6px}
+.demo figcaption{margin-top:.85rem}
+.url{display:block;overflow-x:auto;white-space:nowrap;background:var(--surface);border:1px solid var(--line);
+border-radius:5px;padding:.65rem .8rem;font:12.5px/1.5 var(--mono);color:var(--dim)}
+.url b{color:var(--amber);font-weight:400}
+h2{font:600 .72rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--violet);
+margin:0 0 .9rem}
+section{margin:0 0 2.5rem}
+dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.1rem;margin:0;font-size:14px}
+dt{font:400 13px/1.6 var(--mono);color:var(--amber)}
+dd{margin:0;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding-top:1.25rem;color:var(--dim);font-size:13.5px}
+a{color:var(--violet);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:2px}
+.note{color:var(--dim);font-size:13.5px;margin:.6rem 0 0}
+@media(max-width:30rem){dl{grid-template-columns:1fr;gap:.15rem}dd{margin-bottom:.6rem}}</style>
+</head>
+<body>
+<main>
+  <svg class="mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 32 32">
+  <title>github-profile-trophy</title>
+  <rect width="32" height="32" rx="7" fill="#141118" />
+  <!-- A cup earned by rank, which is what the service grades: the bowl is filled violet
+       because a trophy is awarded, not attempted. Amber handles carry the accent rather
+       than a star or a "1", both of which stop reading at favicon size. -->
+  <path d="M11 7h10v5.5a5 5 0 0 1-10 0Z" fill="#9b8cff" />
+  <path d="M11 8.5H8.5v2a3 3 0 0 0 3 3M21 8.5h2.5v2a3 3 0 0 1-3 3" fill="none" stroke="#f0a868" stroke-width="2" stroke-linecap="round" />
+  <path d="M16 17.5v4" stroke="#9b8cff" stroke-width="2.4" stroke-linecap="round" />
+  <rect x="10.5" y="21.5" width="11" height="3.2" rx="1.6" fill="#e9e6ef" />
+</svg>
+  <h1>github-profile-trophy</h1>
+  <p class="tag">Renders a trophy case of GitHub profile ranks as an SVG, for embedding in a README.</p>
+
+  <figure class="demo">
+    <img src="/?username=nixrajput&amp;column=4&amp;row=1&amp;theme=onedark&amp;no-bg=true&amp;no-frame=true" alt="Example trophy row for nixrajput" loading="eager">
+    <figcaption><code class="url">https://github-profile-trophy.nixrajput.com/?<b>username</b>=nixrajput&amp;column=4&amp;row=1&amp;theme=onedark&amp;no-bg=true</code></figcaption>
+  </figure>
+
+  <section>
+    <h2>Parameters</h2>
+    <dl>
+      <dt>username</dt><dd>GitHub username. Required.</dd>
+      <dt>theme</dt><dd>One of 24 themes, e.g. <code>onedark</code>.</dd>
+      <dt>row / column</dt><dd>Grid size of the trophy case.</dd>
+      <dt>no-bg</dt><dd><code>true</code> for a transparent background.</dd>
+      <dt>no-frame</dt><dd><code>true</code> to drop the panel borders.</dd>
+      <dt>title</dt><dd>Comma-separated trophies to keep.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    Self-hosted instance, restricted to whitelisted usernames.
+    <a href="https://github.com/nixrajput/github-profile-trophy">Source and full options on GitHub</a>.
+    <p class="note">Not on the list? Deploy your own from the repo - it is MIT licensed.</p>
+  </footer>
+</main>
+</body>
+</html>`;
 
 const defaultHeaders = new Headers(
   {
@@ -46,56 +125,15 @@ async function app(req: Request): Promise<Response> {
   const column = params.getNumberValue("column", CONSTANTS.DEFAULT_MAX_COLUMN);
   const themeParam: string = params.getStringValue("theme", "default");
   if (username === null) {
-    const [base] = req.url.split("?");
-    const error = new Error400(
-      `<section>
-      <div>
-        <h2>"username" is a required query parameter</h2>
-        <p>The URL should look like
-        <div>
-          <p id="base-show">${base}?username=USERNAME</p>
-          <button>Copy Base Url</button>
-          <span id="temporary-span"></span>
-        </div>where
-        <code>USERNAME</code> is <em>your GitHub username.</em>
-      </div>
-      <div>
-        <h2>You can use this form: </h2>
-        <p>Enter your username and click "Get Trophies"</p>
-        <form action="${base}" method="get">
-          <label for="username">GitHub Username</label>
-          <input type="text" name="username" id="username" placeholder="Ex. gabriel-logan" required>
-          <label for="theme">Theme (Optional)</label>
-          <input type="text" name="theme" id="theme" placeholder="Ex. onedark" value="light">
-          <text>
-            See all the available themes
-            <a href="https://github.com/nixrajput/github-profile-trophy?tab=readme-ov-file#apply-theme" target="_blank">here</a>
-          </text>
-          <br>
-          <button type="submit">Get Trophies</button>
-        </form>
-      </div>
-      <script>
-        const button = document.querySelector("button");
-        const input = document.querySelector("input");
-        const temporarySpan = document.querySelector("#temporary-span");
-
-        button.addEventListener("click", () => {
-          navigator.clipboard.writeText(document.querySelector("#base-show").textContent);
-          temporarySpan.textContent = "Copied!";
-          setTimeout(() => {
-            temporarySpan.textContent = "";
-          }, 1500);
-        });
-      </script>
-    </section>`,
-    );
+    // Landing page rather than a 400: the bare host is a URL someone visits on
+    // purpose, and a rendered example plus the parameter list is more use than
+    // an error telling them what they already know.
     return new Response(
-      error.render(),
+      HOME_PAGE,
       {
-        status: error.status,
+        status: 200,
         headers: new Headers({
-          "Content-Type": "text/html",
+          "Content-Type": "text/html; charset=utf-8",
           "Cache-Control": cacheControlHeader,
         }),
       },

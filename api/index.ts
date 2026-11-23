@@ -1,9 +1,9 @@
 import { Card } from "../src/card.ts";
 import { CONSTANTS, parseParams } from "../src/utils.ts";
 import { COLORS, Theme } from "../src/theme.ts";
-// Fully qualified on purpose: vercel-deno resolves imports at runtime and does not
-// apply deno.json's import map, so the bare "@std/dotenv/load" specifier throws
-// ERR_MODULE_NOT_FOUND on cold start and takes the whole function down.
+// Fully qualified on purpose: vercel-deno ignores deno.json's import map at runtime, so a bare
+// "@std/dotenv/load" throws ERR_MODULE_NOT_FOUND on cold start. jsr: and jsr.io URLs fail too:
+// the function bundle ships module files, not the JSR manifests that resolve them.
 import "https://deno.land/std@0.224.0/dotenv/load.ts";
 import { staticRenderRegeneration } from "../src/StaticRenderRegeneration/index.ts";
 import { GithubRepositoryService } from "../src/Repository/GithubRepository.ts";

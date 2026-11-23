@@ -1,21 +1,12 @@
 import { Soxa as ServiceProvider } from "https://deno.land/x/soxa@1.4/src/core/Soxa.ts";
 import { defaults } from "https://deno.land/x/soxa@1.4/src/defaults.ts";
-import {
-  assertEquals,
-  assertRejects,
-} from "https://deno.land/std@0.203.0/assert/mod.ts";
-import {
-  assertSpyCalls,
-  returnsNext,
-  spy,
-  stub,
-} from "https://deno.land/std@0.203.0/testing/mock.ts";
 
+// v0.32.4 is the newest redis without jsr: imports, which fail on vercel-deno (see api/index.ts).
 export {
   type Bulk,
   connect,
   type Redis,
-} from "https://deno.land/x/redis@v0.31.0/mod.ts";
+} from "https://deno.land/x/redis@v0.32.4/mod.ts";
 
 import { CONSTANTS } from "./src/utils.ts";
 
@@ -26,12 +17,4 @@ const soxa = new ServiceProvider({
   baseURL,
 });
 
-export {
-  assertEquals,
-  assertRejects,
-  assertSpyCalls,
-  returnsNext,
-  soxa,
-  spy,
-  stub,
-};
+export { soxa };

@@ -2,7 +2,7 @@
 
 ## Environment
 
-- Deno >= v1.36.1
+- Deno >= v1.44.4
 - [Vercel](https://vercel.com/)
 - GitHub API v4
 - Docker and Docker compose (optional)

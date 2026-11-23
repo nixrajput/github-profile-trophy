@@ -5,6 +5,7 @@ export function getUrl(request: Request) {
     return {
       pathname: request.url,
       search: request.url,
+      searchParams: new URLSearchParams(),
     };
   }
 }

@@ -19,7 +19,7 @@ runs:
   using: "composite"
   steps:
     - name: Setup Deno
-      uses: denoland/setup-deno@v2
+      uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
       with:
         deno-version: v1.x
 
@@ -27,5 +27,8 @@ runs:
       shell: bash
       env:
         GITHUB_TOKEN1: ${{ inputs.token }}
+        INPUT_USERNAME: ${{ inputs.username }}
+        INPUT_OUTPUT_PATH: ${{ inputs.output_path }}
+        INPUT_THEME: ${{ inputs.theme }}
       run: |
-        deno run --allow-net --allow-env --allow-read --allow-write $GITHUB_ACTION_PATH/render_svg.ts "${{ inputs.username }}" "${{ inputs.output_path }}" "${{ inputs.theme }}"
+        deno run --allow-net --allow-env --allow-read --allow-write "$GITHUB_ACTION_PATH/render_svg.ts" "$INPUT_USERNAME" "$INPUT_OUTPUT_PATH" "$INPUT_THEME"

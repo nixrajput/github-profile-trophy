@@ -1,5 +1,7 @@
 import { GithubApiService } from "../GithubApiService.ts";
-import { assertEquals, returnsNext, soxa, stub } from "../../../deps.ts";
+import { assertEquals } from "@std/assert";
+import { returnsNext, stub } from "@std/testing/mock";
+import { soxa } from "../../../deps.ts";
 import { GitHubUserRepository } from "../../user_info.ts";
 
 const rateLimitMock = await import("../__mocks__/rateLimitMock.json", {

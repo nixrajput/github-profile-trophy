@@ -33,7 +33,13 @@ export async function staticRenderRegeneration(
 
   const response = await render(request);
 
-  if (response.status >= 200 && response.status < 300) {
+  // Replays use options.headers, so only a response served with that Cache-Control is cached.
+  // A 2xx with a shorter one, such as the whitelist refusal, would come back with 24 hours.
+  const cacheControl = options.headers?.get("Cache-Control") ?? null;
+  if (
+    response.status >= 200 && response.status < 300 &&
+    response.headers.get("Cache-Control") === cacheControl
+  ) {
     void cacheManager.save(response);
   }
 

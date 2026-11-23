@@ -1,10 +1,6 @@
 import { Retry } from "../Retry.ts";
-import {
-  assertEquals,
-  assertRejects,
-  assertSpyCalls,
-  spy,
-} from "../../../deps.ts";
+import { assertEquals, assertRejects } from "@std/assert";
+import { assertSpyCalls, spy } from "@std/testing/mock";
 
 type MockResponse = {
   value: number;

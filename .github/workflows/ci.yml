@@ -25,7 +25,7 @@ jobs:
         with:
           # Pinned to the version upstream tests against. Bumping to Deno 2.x is a
           # separate change that needs the test suite run against it first.
-          deno-version: 1.44.4
+          deno-version-file: .dvmrc
       - name: Cache dependencies
         run: deno cache --reload deps.ts
       - name: Format check

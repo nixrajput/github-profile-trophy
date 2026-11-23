@@ -27,3 +27,26 @@ Deno.test("requestGithubData rejects partial GraphQL responses", async () => {
     post.restore();
   }
 });
+
+Deno.test("requestGithubData drops the token from transport errors", async () => {
+  const token = "ghp_test_token_must_not_leak";
+  const post = stub(soxa, "post", () => {
+    const error = Object.assign(
+      new Error("Request failed with status code 401"),
+      { config: { headers: { Authorization: `bearer ${token}` } } },
+    );
+    return Promise.reject(error);
+  });
+
+  try {
+    const error = await assertRejects(
+      () => requestGithubData("query { viewer { login } }", {}, token),
+      Error,
+      "Request failed with status code 401",
+    );
+
+    assertEquals(Deno.inspect(error).includes(token), false);
+  } finally {
+    post.restore();
+  }
+});

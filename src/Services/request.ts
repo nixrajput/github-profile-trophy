@@ -11,12 +11,21 @@ export async function requestGithubData<T = unknown>(
   variables: { [key: string]: string },
   token = "",
 ) {
-  const response = await soxa.post("", {}, {
-    data: { query, variables },
-    headers: {
-      Authorization: `bearer ${token}`,
-    },
-  }) as QueryDefaultResponse<{ user: T }>;
+  let response: QueryDefaultResponse<{ user: T }>;
+  try {
+    response = await soxa.post("", {}, {
+      data: { query, variables },
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    // soxa attaches the request config, Authorization header included, to its
+    // errors, and Retry logs whatever is thrown here. Rethrow the message only.
+    throw new Error(
+      error instanceof Error ? error.message : "GitHub request failed",
+    );
+  }
   const responseData = response.data;
 
   if (responseData?.errors?.length) {

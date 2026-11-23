@@ -4,3 +4,10 @@
 deno.lock
 *.sh
 **/.DS_Store
+.env.*
+!.env.example
+*.pem
+*.key
+*.db
+*.sqlite
+*.sqlite3

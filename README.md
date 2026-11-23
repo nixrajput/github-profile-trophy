@@ -15,7 +15,7 @@
 [![PRs](https://img.shields.io/github/issues-pr/nixrajput/github-profile-trophy?label=PRs)][pulls]
 
 <strong>Self-hosted &middot; Redis cache built in &middot; 24 themes &middot; CI rendering mode &middot; Deno on Vercel</strong><br>
-<sub>The upstream public instance was disabled for cost reasons, so this runs on our own deployment and tokens. Responses are cached <strong>4 hours in Redis</strong> on top of an <strong>8 hour CDN edge cache</strong>, and <code>action.yml</code> can render the SVG inside a workflow instead - one API call per scheduled run, none at page-view time.</sub>
+<sub>The upstream public instance was disabled for cost reasons, so this runs on our own deployment and tokens. Responses are cached <strong>24 hours in Redis</strong> on top of a <strong>24 hour CDN edge cache</strong>, and <code>action.yml</code> can render the SVG inside a workflow instead - one API call per scheduled run, none at page-view time.</sub>
 
 </div>
 
@@ -591,8 +591,8 @@ Deployed to Vercel from this repo's `master` branch. The service is Deno, entry 
 | `ENABLE_REDIS`                                                    | Set to `true` to turn on the Redis response cache.                         |
 | `REDIS_HOST` / `REDIS_PORT` / `REDIS_USERNAME` / `REDIS_PASSWORD` | Redis connection, read only when `ENABLE_REDIS=true`.                      |
 
-Caching is already built in and needs no code: responses are held for 4 hours in Redis
-(`src/config/cache.ts`) on top of an 8 hour CDN edge cache. Turning Redis on is the cheapest
+Caching is already built in and needs no code: responses are held for 24 hours in Redis
+(`src/config/cache.ts`) on top of a 24 hour CDN edge cache. Turning Redis on is the cheapest
 way to keep GitHub API usage down.
 
 > [!TIP]
